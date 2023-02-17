@@ -421,6 +421,9 @@ img {
   .home__img {
     width: 200px;
   }
+  .skills__names {
+    font-size: small;
+  }
 }
 
 @media screen and (min-width: 576px) {
