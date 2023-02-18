@@ -343,7 +343,17 @@
           From: 'restipanda657@gmail.com',
           Subject: 'email from : ' + email.value,
           Body: body,
-        }).then((message) => alert('message send sucsessfuly'));
+        }).then((message) => {
+          swal({
+            title: 'Pesan Terkirim',
+            text: 'Trimakasi sudah menghubungi saya!',
+            icon: 'success',
+            button: 'Ok',
+          });
+        });
+        // clear
+        body = `${(nama.value = '')}${(email.value = '')}${(message.value = '')}`;
+        return body;
       });
     </script>
     <!-- GET TAHUN SAAT INI -->
@@ -363,6 +373,8 @@
 
     <!--===== MAIN JS =====-->
     <script src="assets/js/main.js"></script>
+    <!--==== SWET ALERT ===-->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   </body>
 </html>
 
