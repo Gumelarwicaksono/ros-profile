@@ -294,10 +294,11 @@
         <h2 class="section-title">Contact</h2>
 
         <div class="contact__container bd-grid">
-          <form method="#" class="contact__form">
-            <input type="text" placeholder="Name" class="contact__input" id="name" required />
-            <input type="email" placeholder="Email" class="contact__input" id="email" required />
-            <textarea name="" id="message" cols="0" rows="10" placeholder="Messsage" class="contact__input" required></textarea>
+          <form method="#" class="contact__form" name="submit-to-google-sheet">
+            <input type="text" placeholder="Name" name="nama" class="contact__input" id="name" required />
+            <input type="email" placeholder="Email" name="email" class="contact__input" id="email" required />
+            <input type="text" placeholder="No WA boleh kosong/ada!" name="telpon" class="contact__input" id="telpon" />
+            <textarea id="message" cols="0" rows="10" name="pesan" placeholder="Messsage" class="contact__input" required></textarea>
             <input id="submit" type="submit" value="send" class="contact__button button" />
           </form>
         </div>
@@ -316,11 +317,24 @@
       <p class="footer__copy">&#169; 2023 - <span id="tahun"></span> Rossi-wulansari. All rigths reserved</p>
     </footer>
 
+    <!-- send to googlespretset -->
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzLUgXZpqBhjeqx5Z5hr4frhyL5cuZpmkM6BcPC-dz1vdLg6NJPzlhLzocOwrl7IhE2BQ/exec';
+      const form = document.forms['submit-to-google-sheet'];
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+          .then((response) => console.log('Success!', response))
+          .catch((error) => console.error('Error!', error.message));
+      });
+    </script>
     <!-- send email -->
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
-      const email = document.getElementById('email');
       const nama = document.getElementById('name');
+      const email = document.getElementById('email');
+      const telpon = document.getElementById('telpon');
       const message = document.getElementById('message');
       // add event
       const submit = document.getElementsByClassName('contact__form')[0];
@@ -329,11 +343,26 @@
         e.preventDefault();
         console.log('clicked');
         let body = `
-      Name : ${nama.value}
-      <br>
-      Email : ${email.value}
-      <br>
-      Messsage :${message.value}
+        <table>
+      <tbody>
+        <tr style="border: 1px solid green">
+          <td style="border: 1px solid green; padding: 10px; color: cornflowerblue; border-start-start-radius: 10px"><b>Nama :</b></td>
+          <td style="border: 1px solid green; padding: 10px; color: rgb(88, 14, 5)">${nama.value}</td>
+        </tr>
+        <tr style="border: 1px solid green">
+          <td style="border: 1px solid green; padding: 10px; color: cornflowerblue; border-start-start-radius: 10px"><b>Email :</b></td>
+          <td style="border: 1px solid green; padding: 10px; color: rgb(88, 14, 5)">${email.value}</td>
+        </tr>
+        <tr style="border: 1px solid green">
+          <td style="border: 1px solid green; padding: 10px; color: cornflowerblue; border-start-start-radius: 10px"><b>Telpon :</b></td>
+          <td style="border: 1px solid green; padding: 10px; color: rgb(88, 14, 5)">${telpon.value}</td>
+        </tr>
+        <tr style="border: 1px solid green">
+          <td style="border: 1px solid green; padding: 10px; color: cornflowerblue; border-start-start-radius: 10px"><b>Pesan :</b></td>
+          <td style="border: 1px solid green; padding: 10px; color: rgb(88, 14, 5)">${message.value}</td>
+        </tr>
+      </tbody>
+    </table>
       `;
         // send email
 
@@ -352,7 +381,7 @@
           });
         });
         // clear
-        body = `${(nama.value = '')}${(email.value = '')}${(message.value = '')}`;
+        body = `${(nama.value = '')}${(email.value = '')}${(telpon.value = '')}${(message.value = '')}`;
         return body;
       });
     </script>
