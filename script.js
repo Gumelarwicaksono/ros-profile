@@ -69,14 +69,6 @@ getUsers();
 
 const data = [
   {
-    nama: 'STOP BULIYING',
-    urlLink: 'https://youtu.be/B2C4NK4eQVk?si=iigtW_SmIPvKTS0t',
-  },
-  {
-    nama: 'ICE BREACKING',
-    urlLink: 'https://youtu.be/_38rIjKggOU?si=gJHmaKDRLcWdN_1d',
-  },
-  {
     nama: 'Tari Daerah Berpasangan',
     urlLink: 'https://drive.google.com/file/d/19lZ_6p4jCniz2UYrijowQaMMA4u3_EdW/view?usp=drivesdk',
   },
