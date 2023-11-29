@@ -69,6 +69,38 @@ getUsers();
 
 const data = [
   {
+    nama: 'STOP BULIYING',
+    urlLink: 'https://youtu.be/B2C4NK4eQVk?si=iigtW_SmIPvKTS0t',
+  },
+  {
+    nama: 'ICE BREACKING',
+    urlLink: 'https://youtu.be/_38rIjKggOU?si=gJHmaKDRLcWdN_1d',
+  },
+  {
+    nama: 'Tari Daerah Berpasangan',
+    urlLink: 'https://drive.google.com/file/d/19lZ_6p4jCniz2UYrijowQaMMA4u3_EdW/view?usp=drivesdk',
+  },
+  {
+    nama: 'Ciri-Ciri wujud benda',
+    urlLink: 'https://drive.google.com/file/d/1p1alMigWZN18nyvwQRNiOqCW0Ng0C1fy/view?usp=drivesdk',
+  },
+  {
+    nama: 'Perubahan wujud',
+    urlLink: 'https://drive.google.com/file/d/1sR6ajJlC-H2No7IK2CnKGKItnwddtZkc/view?usp=drivesdk',
+  },
+  {
+    nama: 'Jadwal petugas piket',
+    urlLink: 'https://docs.google.com/document/d/18HlEmenXX8UNWHo_Mide7aLRz0Z4SF_Y/edit?usp=drivesdk&ouid=116617495551462274477&rtpof=true&sd=true',
+  },
+  {
+    nama: 'Assesment diagnostik',
+    urlLink: 'https://drive.google.com/file/d/1ZWfKrxZre1F6eYufDq7MhaboCPDBERtn/view?usp=drivesdk',
+  },
+  {
+    nama: 'Kesepakatan Kelas',
+    urlLink: 'https://drive.google.com/file/d/1M_cUDHX0FY6rrgLDbu_NJAZnshInjeXQ/view?usp=drivesdk',
+  },
+  {
     nama: 'Poster Menjaga Kebersihan Poster Ruang Kelas',
     urlLink: 'https://drive.google.com/file/d/1OE-cqW2RVjJY573gPfjLNV_AL62reovo/view?usp=sharing',
   },
